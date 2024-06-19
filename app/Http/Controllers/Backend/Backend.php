@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend;
 
-use App\Services\Cache\ConfigCache;
 use App\Libs\BaseController;
+use App\Services\Cache\ConfigCache;
 
 class Backend extends BaseController
 {

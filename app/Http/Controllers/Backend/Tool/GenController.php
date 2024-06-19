@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Backend\Tool;
 
 use App\Exceptions\BusinessException;
+use App\Models\System\Menu;
 use App\Utils\Functions;
 use App\Utils\Result;
-use App\Models\System\Menu;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -42,14 +42,14 @@ class GenController extends Tool
             //已生成过的表
             $systemList = ['vel_admin', 'vel_admin_role', 'vel_admin_struct', 'vel_config', 'vel_menu', 'vel_role', 'vel_role_menu', 'vel_role_struct', 'vel_struct'];
             $tables = Db::select('show tables');
+
             $tableList = [];
             foreach ($tables as $value) {
                 $table = current($value);
-                if (! in_array($table, $systemList) && strpos($table, 'vel_') !== 0) {
+                if (! in_array($table, $systemList)) {
                     $tableList[] = $table;
                 }
             }
-
             return $this->render('', ['tableList' => $tableList]);
         }
 
@@ -152,7 +152,7 @@ class GenController extends Tool
         }
 
         //路径并创建
-        $model_path = str_replace('/', DIRECTORY_SEPARATOR, $root.'/app/Http/Controllers/Admin'.$dir);
+        $model_path = str_replace('/', DIRECTORY_SEPARATOR, $root.'/app/Http/Controllers/Backend'.$dir);
         if (true !== $res = $this->mkdir($model_path)) {
             return $res;
         }
@@ -172,7 +172,7 @@ class GenController extends Tool
 
         //的示例代码
         $temp_path = str_replace('/', DIRECTORY_SEPARATOR, $root.'/resources/views/admin/tool/gen/create/controller.tpl');
-        $gen_model_path = str_replace('/', DIRECTORY_SEPARATOR, $root.'/app/Http/Controllers/Admin'.$dir.'/'.$controller_name.'Controller.php'); //生成的模型地址
+        $gen_model_path = str_replace('/', DIRECTORY_SEPARATOR, $root.'/app/Http/Controllers/Backend'.$dir.'/'.$controller_name.'Controller.php'); //生成的模型地址
         $tem_f = fopen($temp_path, 'r');
         $temp_str = fread($tem_f, filesize($temp_path));
 

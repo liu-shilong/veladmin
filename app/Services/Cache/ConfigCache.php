@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Services\Cache;
 
-use App\Utils\Functions;
-use App\Extends\Services\System\ConfigService;
 use App\Models\System\Config;
+use App\Services\System\ConfigService;
+use App\Utils\Functions;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 

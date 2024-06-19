@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\System;
 
-use App\Utils\Result;
-use App\Http\Requests\System\MenuValidate;
+use App\Http\Requests\System\MenuRequest;
 use App\Libs\AdminCommonAction;
 use App\Models\System\Menu;
 use App\Services\System\MenuService;
+use App\Utils\Result;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 
@@ -18,7 +18,7 @@ class MenuController extends System
 
     protected string $model = Menu::class;
 
-    protected string $validate = MenuValidate::class;
+    protected string $validate = MenuRequest::class;
 
     /**
      * 获取菜单列表

@@ -5,18 +5,21 @@ declare(strict_types=1);
 namespace App\Http\Requests\System;
 
 use App\Libs\BaseValidate;
-use App\Models\System\Menu;
+use App\Models\System\Role;
 use Illuminate\Validation\Rule;
 
-class MenuValidate extends BaseValidate
+class RoleRequest extends BaseValidate
 {
     public function rules(): array
     {
         return [
             'name' => 'required|min:2|max:30',
-            'perms' => [
+            'rolekey' => [
                 'required',
-                Rule::unique(Menu::tableName())->where(function ($query) {
+                'min:3',
+                'max:30',
+                'alpha_dash',
+                Rule::unique(Role::tableName())->where(function ($query) {
                     if (isset($this->data['id'])) {
                         return $query->where('id', '<>', $this->data['id']);
                     }
@@ -31,8 +34,8 @@ class MenuValidate extends BaseValidate
     public function attributes(): array
     {
         return [
-            'name' => '菜单名称',
-            'perms' => '权限标识',
+            'name' => '角色名称',
+            'roleky' => '角色标识',
             'listsort' => '显示顺序',
         ];
     }

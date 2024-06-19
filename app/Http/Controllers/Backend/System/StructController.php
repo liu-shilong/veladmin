@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\System;
 
-use App\Utils\Result;
-use App\Http\Requests\System\StructValidate;
+use App\Http\Requests\System\StructRequest;
 use App\Libs\AdminCommonAction;
 use App\Models\System\Struct;
 use App\Services\System\AdminStructService;
 use App\Services\System\RoleStructService;
 use App\Services\System\StructService;
+use App\Utils\Result;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 
@@ -20,7 +20,7 @@ class StructController extends System
 
     protected string $model = Struct::class;
 
-    protected string $validate = StructValidate::class;
+    protected string $validate = StructRequest::class;
 
     /**
      * 首页渲染

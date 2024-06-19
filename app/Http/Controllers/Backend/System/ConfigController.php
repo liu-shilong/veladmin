@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\System;
 
-use App\Services\Cache\ConfigCache;
-use App\Utils\Result;
-use App\Http\Requests\System\ConfigValidate;
 use App\Libs\AdminCommonAction;
 use App\Models\System\Config;
+use App\Services\Cache\ConfigCache;
 use App\Services\System\ConfigService;
+use App\Utils\Result;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 

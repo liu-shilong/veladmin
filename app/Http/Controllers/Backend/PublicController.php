@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Backend;
 
 use App\Services\Cache\ConfigCache;
+use App\Services\System\AdminLoginService;
 use App\Utils\Admin\LoginAuth;
-use App\Extends\Services\System\AdminLoginService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;

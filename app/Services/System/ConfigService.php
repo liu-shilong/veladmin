@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Services\System;
 
-use App\Utils\Functions;
 use App\Models\System\Config;
+use App\Utils\Functions;
 use Illuminate\Support\Facades\DB;
 
 class ConfigService

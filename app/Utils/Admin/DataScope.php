@@ -5,8 +5,8 @@ declare(strict_types=1);
 
 namespace App\Utils\Admin;
 
-use App\Extends\Services\System\RoleStructService;
-use App\Extends\Services\System\StructService;
+use App\Services\System\RoleStructService;
+use App\Services\System\StructService;
 use Illuminate\Database\Query\Builder;
 
 class DataScope

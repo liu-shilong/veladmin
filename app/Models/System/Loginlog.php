@@ -2,10 +2,10 @@
 
 namespace App\Models\System;
 
+use App\Libs\AdminBaseModel;
 use App\Utils\Functions;
 use App\Utils\IpLocation\IpLocation;
 use App\Utils\UserAgent\Agent;
-use App\Libs\AdminBaseModel;
 
 class Loginlog
 {

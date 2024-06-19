@@ -6,7 +6,7 @@ namespace App\Http\Requests\System;
 
 use App\Libs\BaseValidate;
 
-class StructValidate extends BaseValidate
+class StructRequest extends BaseValidate
 {
     public function rules(): array
     {

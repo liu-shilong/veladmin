@@ -1,7 +1,7 @@
 <?php
 
-use App\Utils\Admin\LoginAuth;
 use App\Models\System\Menu;
+use App\Utils\Admin\LoginAuth;
 
 /**
  * laravel 查询Object对象转数组

@@ -2,7 +2,7 @@
 
 declare (strict_types = 1);
 
-namespace App\Http\Controllers\Admin{$dir};
+namespace App\Http\Controllers\Backend{$dir};
 
 use App\Libs\AdminCommonAction;
 use App\Models{$dir}\{$model};

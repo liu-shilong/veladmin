@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Middleware;
 
+use App\Services\System\AdminLoginService;
 use App\Utils\Admin\LoginAuth;
 use App\Utils\Result;
-use App\Extends\Services\System\AdminLoginService;
 use Closure;
 use Illuminate\Http\Request;
 

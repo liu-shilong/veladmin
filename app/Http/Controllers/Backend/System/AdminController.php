@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\System;
 
-use App\Services\Cache\PositionCache;
-use App\Utils\Functions;
-use App\Utils\Result;
-use App\Http\Requests\System\AdminValidate;
+use App\Http\Requests\System\AdminRequest;
 use App\Libs\AdminCommonAction;
 use App\Models\System\Admin;
 use App\Models\System\Role;
+use App\Services\Cache\PositionCache;
 use App\Services\System\AdminPosService;
 use App\Services\System\AdminRoleService;
 use App\Services\System\AdminStructService;
 use App\Services\System\StructService;
+use App\Utils\Functions;
+use App\Utils\Result;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
@@ -25,7 +25,7 @@ class AdminController extends System
 
     protected string $model = Admin::class;
 
-    protected string $validate = AdminValidate::class;
+    protected string $validate = AdminRequest::class;
 
     /**
      * 选择人员视图

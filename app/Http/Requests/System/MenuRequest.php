@@ -5,34 +5,35 @@ declare(strict_types=1);
 namespace App\Http\Requests\System;
 
 use App\Libs\BaseValidate;
-use App\Models\System\Admin;
+use App\Models\System\Menu;
 use Illuminate\Validation\Rule;
 
-class AdminValidate extends BaseValidate
+class MenuRequest extends BaseValidate
 {
     public function rules(): array
     {
         return [
-            'username' => [
+            'name' => 'required|min:2|max:30',
+            'perms' => [
                 'required',
-                'min:3',
-                'max:30',
-                'alpha_dash',
-                Rule::unique(Admin::tableName())->where(function ($query) {
+                Rule::unique(Menu::tableName())->where(function ($query) {
                     if (isset($this->data['id'])) {
                         return $query->where('id', '<>', $this->data['id']);
                     }
+
+                    return $query;
                 }),
             ],
-            'password' => 'min:6|max:20',
+            'listsort' => 'integer',
         ];
     }
 
     public function attributes(): array
     {
         return [
-            'username' => '登录名称',
-            'password' => '登录密码',
+            'name' => '菜单名称',
+            'perms' => '权限标识',
+            'listsort' => '显示顺序',
         ];
     }
 }

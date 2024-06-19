@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Services\Cache;
 
-use App\Utils\Functions;
 use App\Models\System\Position;
+use App\Utils\Functions;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 

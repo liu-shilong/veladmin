@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend\System;
 
-use App\Utils\Admin\DataScope;
-use App\Utils\Result;
-use App\Http\Requests\System\RoleValidate;
 use App\Libs\AdminCommonAction;
 use App\Models\System\Role;
 use App\Services\System\AdminRoleService;
 use App\Services\System\RoleMenuService;
 use App\Services\System\RoleStructService;
+use App\Utils\Admin\DataScope;
+use App\Utils\Result;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 

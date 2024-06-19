@@ -1,4 +1,4 @@
-// 使用方法：复制到routes/admin.php中
+// 使用方法：复制到routes/web.php中
 Route::prefix('{$group}')->name('{$group}.')->group(function () {
     // {$moduleName}管理
     Route::controller(\App\Http\Controllers\Admin\{$base}\{$controller}Controller::class)->prefix('{$module}')->name('{$module}.')->group(function (){

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\System\Menu;
 use App\Utils\Admin\LoginAuth;
 use App\Utils\Functions;
-use App\Models\System\Menu;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
